@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@repo/store": "*",
+    "@repo/ui": "*",
     "@radix-ui/react-slot": "^1.2.0",
     "@types/bcrypt": "^5.0.2",
     "bcrypt": "^5.1.1",

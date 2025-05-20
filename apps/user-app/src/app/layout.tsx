@@ -1,22 +1,28 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { Providers } from "../../providers";
+import { AppbarClient } from "../components/AppbarClient";
+import { JSX } from "react";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Web-Wallet",
-  description: "web based wallet access from anywhere",
+  title: "Wallet",
+  description: "Simple wallet app",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}): JSX.Element {
   return (
     <html lang="en">
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+      <Providers>
+        <AppbarClient />
+        <body className={inter.className}>{children}</body>
+      </Providers>
     </html>
   );
 }
